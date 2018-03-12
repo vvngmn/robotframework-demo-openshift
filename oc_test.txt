@@ -10,5 +10,6 @@ case1 - login
 
 case2 - user create project
     ${output}	call_commands	oc	login	${url}	-u ${user1}	-p ${password1}
+    ${randomname}	create_random_name	3
     ${output}	call_commands	oc	new-project ${randomname}
  

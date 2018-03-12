@@ -16,18 +16,19 @@ class Base(object):
 		else:
 			return subprocess.Popen(command, stdout=subprocess.PIPE).stdout.read()  # command output is from oc stdout
 	
-	def _return_random_name(self,length):
-	    number = '0123456789'
-	    alpha = 'abcdefghijklmnopqrstuvwxyz'
-	    name = ''
-	    for i in range(0,length,2):
-	        name += random.choice(number)
-	        name += random.choice(alpha)
-	    return name
+	def create_random_name(self, length):
+		number = '0123456789'
+		alpha = 'abcdefghijklmnopqrstuvwxyz'
+		name = ''
+		for i in range(0,length,2):
+			name += random.choice(number)
+			name += random.choice(alpha)
+		return name
+
+
 	
 	def call_commands(self, *args):
 		command = [x.encode('UTF8') for x in args]
-		print command
 		return self._call(command)
 
 	def check_output_keyword(self,**args):
