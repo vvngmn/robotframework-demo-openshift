@@ -1,0 +1,14 @@
+*** Settings ***
+Documentation     This suite cover all oc login and projects related cases
+Library		./baseapi/Base.py		${url}
+
+
+*** Test Cases ***
+case1 - login
+    ${output}	call_commands	oc	login	${url}	-u ${user1}	-p ${password1}
+    ${check}	check_output_keyword	keyword=successful	source=${output}
+
+case2 - user create project
+    ${output}	call_commands	oc	login	${url}	-u ${user1}	-p ${password1}
+    ${output}	call_commands	oc	new-project ${randomname}
+ 

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generated="20170827 15:06:40.010" generator="Robot 3.0.3.dev20170213 (Python 2.7.11 on linux2)">
+<suite source="/home/xiaocwan/test_robotframework/oc_test.txt" id="s1" name="Oc Test">
+<test id="s1-t1" name="case1 - login">
+<kw name="Call Commands" library="Base">
+<arguments>
+<arg>oc</arg>
+<arg>login</arg>
+<arg>${url}</arg>
+<arg>-u ${user1}</arg>
+<arg>-p ${password1}</arg>
+</arguments>
+<assign>
+<var>${output}</var>
+</assign>
+<msg timestamp="20170827 15:06:55.607" level="INFO">['oc', 'login', 'https://host-8-241-25.host.centralci.eng.rdu2.redhat.com:8443', '-u xiaocwan', '-p p']</msg>
+<msg timestamp="20170827 15:06:55.607" level="INFO">${output} = Login successful.
+
+You don't have any projects. You can try to create a new project, by running
+
+    oc new-project &lt;projectname&gt;
+
+</msg>
+<status status="PASS" endtime="20170827 15:06:55.607" starttime="20170827 15:06:40.031"></status>
+</kw>
+<kw name="Check Output Keyword" library="Base">
+<arguments>
+<arg>keyword=successful</arg>
+<arg>source=${output}</arg>
+</arguments>
+<assign>
+<var>${check}</var>
+</assign>
+<msg timestamp="20170827 15:06:55.608" level="INFO">${check} = OK</msg>
+<status status="PASS" endtime="20170827 15:06:55.608" starttime="20170827 15:06:55.608"></status>
+</kw>
+<status status="PASS" endtime="20170827 15:06:55.608" critical="yes" starttime="20170827 15:06:40.030"></status>
+</test>
+<doc>This suite cover all oc login and projects related cases</doc>
+<status status="PASS" endtime="20170827 15:06:55.609" starttime="20170827 15:06:40.011"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Oc Test" pass="1">Oc Test</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
